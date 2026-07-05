@@ -1,0 +1,21 @@
+{set:start|{unix}}
+{eval:{mediascript:
+load {media} m
+{replace:*|with:m|in:{args}}
+copy m m2
+{replace:*|with:m2|in:{args}}
+copy m2 m3
+{replace:*|with:m3|in:{args}}
+copy m3 m4
+{replace:*|with:m4|in:{args}}
+join m m2
+volume m 2
+join m3 m4
+volume m3 2
+join m m3 true
+volume m 2
+render m default quadparison
+}}
+your media has been quadparisoned!
+-# made by yellowgreengmd
+-# took {math:({unix}-{get:start})/1000} seconds
